@@ -1,9 +1,9 @@
 //VARIABLES
-var words = ["arthur", "rugrats", "thesimpsons", "scoobydoo", "spongebob", "dannyphantom", "teentitans"]
+var videoGames = ["pacman", "asteroids", "donkeykong", "pitfall", "metroid", "supermario", "legendofzelda"]
 
 //Empty variables to store values later
-var randomWord = "";
-var lettersOfWord = []
+var ramdomGame = "";
+var gameWord = [];
 var blanks = 0;
 var blanksAndCorrect = [];
 var wrongGuess = [];
@@ -12,146 +12,47 @@ var wrongGuess = [];
 var wins = 0;
 var losses = 0;
 var guessesRemaining = 9;
-
-
+var wins = 0;
+var losses = 0;
+var guessesRemaining = 9;
 
 // ALL FUNCTIONS
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//>>>>>>>>>>>>>>>>>>>>>>>
 
 
-//__________________________________________________________
+//_______________________
 //GAME START FUNCTION
-//__________________________________________________________
+//_______________________
+
 function Game() {
-    //computer generates random word from words array
-    randomWord = words[Math.floor(Math.random() * words.length)];
+    //computer generates random videogames from videogames array
+    randomGame = videoGames[Math.floor(Math.random() * videoGames.length)];
 
-    // split the individual word into separate arrays, and store in new array 
-    lettersOfWord = randomWord.split("");
+    //split the invidiual word into sperate arrays, and store into a new array
+    gameWord = randomGame.split("");
 
-    //store length of word in blanks, for later use
-    blanks = lettersOfWord.length;
+    // store length of word in blanks, for later use
+    blanks = gameWord.length;
 
-    //creating a loop to generate "_" for each letter in array stored in blanks
-    for (var i = 0; i < blanks; i++) {
+    //creating a loop to generate "_" for each letter to array in stored in blanks
+    for (var i = 0; i < blanks; i++)  {
         blanksAndCorrect.push("_");
     }
 
-    //showing the "_" within HTML
-    document.getElementById("currentword").innerHTML = "  " + blanksAndCorrect.join("  ");
+    //showing the "_" within the HTML
+    document.getElementById("answer").innerHTML = "  " + blanksAndCorrect.join("  ");
 
-    //console logging 
-    console.log(randomWord);
-    console.log(lettersOfWord)
-    console.log(blanks)
-    console.log(blanksAndCorrect)
+    // console logging
+    console.log(ramdomGame);
+    console.log(gameWord);
+    console.log(blanks);
+    console.log(blanksAndCorrect);
 }
 
-
-//__________________________________________________________
-//AUDIO FUNCTION
-//__________________________________________________________
-
-//variables for audio function
-var a = document.getElementById("arthur");
-var r = document.getElementById("rugrats");
-var simpsons = document.getElementById("simpsons");
-var scoobydoo = document.getElementById("scoobydoo");
-var spongebob = document.getElementById("spongebob");
-var danny = document.getElementById("danny");
-var teent = document.getElementById("teent");
-
-
-function aud() {
-    //Arthur Audio & Image
-    //---------------------------
-    if (randomWord === words[0]) {
-        scoobydoo.pause();
-        spongebob.pause();
-        danny.pause();
-        teent.pause();
-        simpsons.pause();
-        r.pause();
-        a.play();
-        document.getElementById("image").src = "./assets/images/arther.gif";
-    }
-    //Rugrats Audio & Image
-    //---------------------------
-    else if (randomWord === words[1]) {
-        scoobydoo.pause();
-        spongebob.pause();
-        danny.pause();
-        teent.pause();
-        simpsons.pause();
-        a.pause();
-        r.play();
-        document.getElementById("image").src = "./assets/images/rugrats.gif";
-    }
-    //Simpsons Audio & Image
-    //---------------------------
-    else if (randomWord === words[2]) {
-        scoobydoo.pause();
-        spongebob.pause();
-        danny.pause();
-        teent.pause();
-        r.pause();
-        a.pause();
-        simpsons.play();
-        document.getElementById("image").src = "./assets/images/simpsons.gif";
-    }
-    //Scooby-doo Audio & Image
-    //---------------------------
-    else if (randomWord === words[3]) {
-        spongebob.pause();
-        danny.pause();
-        teent.pause();
-        simpsons.pause();
-        r.pause();
-        a.pause();
-        scoobydoo.play();
-        document.getElementById("image").src = "./assets/images/scooby.gif";
-    }
-    //Spongebob Audio & Image
-    //---------------------------
-    else if (randomWord === words[4]) {
-        danny.pause();
-        teent.pause();
-        simpsons.pause();
-        r.pause();
-        a.pause();
-        scoobydoo.pause();
-        spongebob.play();
-        document.getElementById("image").src = "./assets/images/spongebob.gif";
-    }
-    //Danny Audio & Image
-    //---------------------------
-    else if (randomWord === words[5]) {
-        spongebob.pause();
-        teent.pause();
-        simpsons.pause();
-        r.pause();
-        a.pause();
-        scoobydoo.pause();
-        danny.play();
-        document.getElementById("image").src = "./assets/images/danny.gif";
-    }
-    //Teen Titans Audio & Image
-    //---------------------------
-    else if (randomWord === words[6]) {
-        spongebob.pause();
-        danny.pause();
-        simpsons.pause();
-        r.pause();
-        a.pause();
-        scoobydoo.pause();
-        teent.play();
-        document.getElementById("image").src = "./assets/images/teen.gif";
-    }
-};
-
-//__________________________________________________________
+//_________________________
 //RESET FUNCTION
-//__________________________________________________________
+//_________________________
+
 function reset() {
     guessesRemaining = 9;
     wrongGuess = [];
@@ -166,9 +67,9 @@ function reset() {
 //If/Else, to see if letter selected matches random word
 function checkLetters(letter) {
     var letterInWord = false;
-    //if the generated randomword is equal to the letter entered... then variable is true
+    //if the generated randomGame is equal to the letter entered... then variable is true
     for (var i = 0; i < blanks; i++) {
-        if (randomWord[i] == letter) {
+        if (randomGame[i] == letter) {
             letterInWord = true;
         }
     }
@@ -176,7 +77,7 @@ function checkLetters(letter) {
     if (letterInWord) {
         //check each letter to see if it matches word
         for (var i = 0; i < blanks; i++) {
-            if (randomWord[i] == letter) {
+            if (randomGame[i] == letter) {
                 blanksAndCorrect[i] = letter;
             }
         }
@@ -189,18 +90,17 @@ function checkLetters(letter) {
     console.log(blanksAndCorrect);
 }
 
-//__________________________________________________________
+//___________________________
 //FINAL COMPLETE FUNCTION
-//__________________________________________________________
+//___________________________
 
 //check to see if player won...
 function complete() {
     console.log("wins:" + wins + "| losses:" + losses + "| guesses left:" + guessesRemaining)
 
     //if WON...then alert, play audio, display image and reset new round
-    if (lettersOfWord.toString() == blanksAndCorrect.toString()) {
+    if (gameWord.toString() == blanksAndCorrect.toString()) {
         wins++;
-        aud()
         reset()
         //display wins on screen
         document.getElementById("winstracker").innerHTML = " " + wins;
@@ -213,17 +113,18 @@ function complete() {
         document.getElementById("losstracker").innerHTML = " " + losses;
     }
     //display losses on screen && guesses remaining countdown
-    document.getElementById("currentword").innerHTML = "  " + blanksAndCorrect.join(" ");
+    document.getElementById("answer").innerHTML = "  " + blanksAndCorrect.join(" ");
     document.getElementById("guessesremaining").innerHTML = " " + guessesRemaining;
 }
 
 
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-//_____________________________________________________
+//>>>>>>>>>>>>>>>>>>>
+//___________________
 // EXECUTE CODE 
-//_____________________________________________________
+//___________________
 
 //call start game function
+
 Game()
 
 //check for keyup, and convert to lowercase then store in guesses
