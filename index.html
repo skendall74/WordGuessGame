@@ -20,45 +20,49 @@
         <div class="container">
 
             <h2>Press Any Key To Guess This Word!</h2>
+            <!--Main Image which will not change -->
             <section>
                 <div class=”media”>
                     <img id="image" src="./assets/images/2-WordGuess.jpg">
                 </div>
-              </section>
-            
-            <div><!--Current Word -->
+            </section>
+
+            <div>
+                <!--Current Word -->
                 <h3 id="answer">_ _ _ _ _</h3>
             </div>
             <div id="scoreboard">
-                
-                <div class="sidebar"><!--Guesses left -->
-                    <h3>GUESSES LEFT:
-                        <span id="guessesremaining"></span>
+
+                <div class="side">
+                    <!--Guesses left -->
+                    <h3>GUESSES LEFT: <span id="guessesleft"></span>
                     </h3>
                 </div>
 
-                <div class="sidebar"><!--Wins counter -->
-                    <h3>WINS:
-                        <span id="winstracker"></span>
+                <div class="side">
+                    <!--Wins counter -->
+                    <h3>WINS:<span id="winstracker"></span>
+                    </h3>
+                </div>
+
+                <div class="side">
+                    <!--Loss counter -->
+                    <h3>LOSSES:<span id="losstracker"></span>
+                    </h3>
+                </div>
+
+                <div class="side">
+                    <!--Wrong guesses -->
+                    <h3>LETTERS YOU GUESSED INCORRECTLY:<span id="playerwrong"></span>
                     </h3>
                 </div>
                 
-                <div class="sidebar"><!--Loss counter -->
-                    <h3>LOSSES:
-                        <span id="losstracker"></span>
-                    </h3>
-                </div>
-                
-                <div class="sidebar"><!--Wrong guesses -->
-                    <h3>LETTERS YOU GUESSED INCORRECTLY:
-                        <span id="playerguesses"></span>
-                    </h3>
-                </div>
             </div>
         </div>
     </div>
 
     <script src="assets/javascript/game.js"></script>
+    <!--A little bit of Java-->
 
 </body>
 

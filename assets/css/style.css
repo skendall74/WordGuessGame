@@ -13,7 +13,7 @@ body {
 
 h1 {
     font-size: 43px;
-    border: solid 5px #0021A5;
+    border: solid 7px #0021A5;
     background: white;
     text-align: center;
     margin-top: 2%;
@@ -49,20 +49,20 @@ h2 {
     padding: 10px 0px 10px 10px;
 }
 
-.sidebar {
+.side {
     padding: 5px;
     position: relative;
     border-top: solid #0021A5 2px;
     border-bottom: solid #0021A5 2px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-family: 'Press Start 2P', cursive;
     font-size: 12px;
 }
 
 span {
     border: solid #0021A5 2px;
-    padding-left: 3px;
-    padding-right:3px;
+    padding-left: 4px;
+    padding-right: 4px;
     background-color: #FA4616; 
     font-size: 15px;
     color: #fff;
@@ -72,6 +72,7 @@ span {
 .background {
     background: none;
     border: dotted 2px #fff;
+    margin-top: 5px;
 }
 
 .container {
@@ -81,8 +82,10 @@ span {
     margin-right: 20%;
     margin-bottom: 5px;
     text-align: center;
-    border: solid 3px #0021A5;
+    border: solid 10px #0021A5;
 }
+
+/* Content */
 
 #answer {
     font-size: 30px;

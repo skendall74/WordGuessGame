@@ -11,10 +11,10 @@ var wrongGuess = [];
 //Counter Variables
 var wins = 0;
 var losses = 0;
-var guessesRemaining = 9;
+var guessesleft = 9;
 var wins = 0;
 var losses = 0;
-var guessesRemaining = 9;
+var guessesleft = 9;
 
 // ALL FUNCTIONS
 //>>>>>>>>>>>>>>>>>>>>>>>
@@ -49,33 +49,33 @@ function Game() {
     console.log(blanksAndCorrect);
 }
 
-//_________________________
+//________________
 //RESET FUNCTION
-//_________________________
+//________________
 
 function reset() {
-    guessesRemaining = 9;
+    guessesleft = 9;
     wrongGuess = [];
     blanksAndCorrect = [];
     Game()
 }
 
-//__________________________________________________________
+//_______________________________
 //CHECK LETTERS/COMPARE FUNCTION
-//__________________________________________________________
+//_______________________________
 
-//If/Else, to see if letter selected matches random word
+//If/Else, to see if letter selected matches random game
 function checkLetters(letter) {
-    var letterInWord = false;
+    var letterInGame = false;
     //if the generated randomGame is equal to the letter entered... then variable is true
     for (var i = 0; i < blanks; i++) {
         if (randomGame[i] == letter) {
-            letterInWord = true;
+            letterInGame = true;
         }
     }
-    //if letterInWord (false)
-    if (letterInWord) {
-        //check each letter to see if it matches word
+    //if letterInGame (false)
+    if (letterInGame) {
+        //check each letter to see if it matches game
         for (var i = 0; i < blanks; i++) {
             if (randomGame[i] == letter) {
                 blanksAndCorrect[i] = letter;
@@ -85,18 +85,18 @@ function checkLetters(letter) {
     //otherwise, push the incorrect guess in the wrong guesses section, and reduce remaining guesses
     else {
         wrongGuess.push(letter);
-        guessesRemaining--;
+        guessesleft--;
     }
     console.log(blanksAndCorrect);
 }
 
-//___________________________
+//________________________
 //FINAL COMPLETE FUNCTION
-//___________________________
+//________________________
 
 //check to see if player won...
 function complete() {
-    console.log("wins:" + wins + "| losses:" + losses + "| guesses left:" + guessesRemaining)
+    console.log("wins:" + wins + "| losses:" + losses + "| guesses left:" + guessesleft)
 
     //if WON...then alert, play audio, display image and reset new round
     if (gameWord.toString() == blanksAndCorrect.toString()) {
@@ -106,15 +106,15 @@ function complete() {
         document.getElementById("winstracker").innerHTML = " " + wins;
 
         //if LOST...then alert and reset new round
-    } else if (guessesRemaining === 0) {
+    } else if (guessesleft === 0) {
         losses++;
         reset()
-        document.getElementById("image").src = "./assets/images/try-again.png"
+        document.getElementById("image").src = "./assets/images/2-WordGuess.jpg"
         document.getElementById("losstracker").innerHTML = " " + losses;
     }
-    //display losses on screen && guesses remaining countdown
+    //display losses on screen && guesses left countdown
     document.getElementById("answer").innerHTML = "  " + blanksAndCorrect.join(" ");
-    document.getElementById("guessesremaining").innerHTML = " " + guessesRemaining;
+    document.getElementById("guessesleft").innerHTML = " " + guessesleft;
 }
 
 
@@ -138,5 +138,5 @@ document.onkeyup = function (event) {
     console.log(guesses);
 
     //display/store incorrect letters on screen
-    document.getElementById("playerguesses").innerHTML = "  " + wrongGuess.join(" ");
+    document.getElementById("playerwrong").innerHTML = "  " + wrongGuess.join(" ");
 }
