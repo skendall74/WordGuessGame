@@ -2,7 +2,7 @@
 var videoGames = ["pacman", "asteroids", "donkeykong", "pitfall", "metroid", "supermario", "legendofzelda"]
 
 //Empty variables to store values later
-var ramdomGame = "";
+var randomGame = "";
 var gameWord = [];
 var blanks = 0;
 var blanksAndCorrect = [];
@@ -14,7 +14,6 @@ var losses = 0;
 var guessesleft = 9;
 var wins = 0;
 var losses = 0;
-var guessesleft = 9;
 
 // ALL FUNCTIONS
 //>>>>>>>>>>>>>>>>>>>>>>>
@@ -43,7 +42,7 @@ function Game() {
     document.getElementById("answer").innerHTML = "  " + blanksAndCorrect.join("  ");
 
     // console logging
-    console.log(ramdomGame);
+    console.log(randomGame);
     console.log(gameWord);
     console.log(blanks);
     console.log(blanksAndCorrect);

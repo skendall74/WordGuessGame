@@ -5,8 +5,7 @@
 /* HTML, BODY CSS, JS*/
 
 body {
-    background: #000;
-    width: 100%
+    background: url('./assets/images/wallpaper.jpeg') repeat;
 }
 
 /* Header*/
@@ -33,7 +32,8 @@ section {
     min-width: 0;
     margin: 5px;
 }
- img {
+
+img {
     width: 450px;
     max-width: 100%; 
     max-height: 450px; 
@@ -70,7 +70,6 @@ span {
 }
 
 .background {
-    background: none;
     border: dotted 2px #fff;
     margin-top: 5px;
 }
