@@ -73,7 +73,8 @@ span {
 }
 
 .background {
-    border: dotted 2px #fff;
+    border-top: dotted 2px #fff;
+    border-bottom: dotted 2px #fff;
     margin-top: 5px;
 }
 
