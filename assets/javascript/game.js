@@ -59,7 +59,8 @@ function Game() {
 function aud() {
     //Arthur Audio & Image
     //---------------------------
-    if (randomGame === words[0]) {
+    if (randomGame === videoGames[0]) {
+        console.log("This Works")
         castlevania.pause();
         metroid.pause();
         supermario.pause();
@@ -71,7 +72,7 @@ function aud() {
     }
     //Rugrats Audio & Image
     //---------------------------
-    else if (randomGame === words[1]) {
+    else if (randomGame === videoGames[1]) {
         castlevania.pause();
         metroid.pause();
         supermario.pause();
@@ -83,7 +84,7 @@ function aud() {
     }
     //Simpsons Audio & Image
     //---------------------------
-    else if (randomGame === words[2]) {
+    else if (randomGame === videoGames[2]) {
         castlevania.pause();
         metroid.pause();
         supermario.pause();
@@ -95,7 +96,7 @@ function aud() {
     }
     //Scooby-doo Audio & Image
     //---------------------------
-    else if (randomGame === words[3]) {
+    else if (randomGame === videoGames[3]) {
         p.pause();
         metroid.pause();
         supermario.pause();
@@ -107,7 +108,7 @@ function aud() {
     }
     //Metroid Audio & Image
     //---------------------------
-    else if (randomGame === words[4]) {
+    else if (randomGame === videoGames[4]) {
         castlevania.pause();
         supermario.pause();
         legendofzelda.pause();
@@ -119,7 +120,7 @@ function aud() {
     }
     //Super Mario Audio & Image
     //---------------------------
-    else if (randomGame === words[5]) {
+    else if (randomGame === videoGames[5]) {
         castlevania.pause();
         metroid.pause();
         legendofzelda.pause();
@@ -131,7 +132,7 @@ function aud() {
     }
     //Legend of Zelda Audio & Image
     //---------------------------
-    else if (randomGame === words[6]) {
+    else if (randomGame === videoGames[6]) {
         castlevania.pause();
         metroid.pause();
         supermario.pause();
