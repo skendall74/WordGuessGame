@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link rel="icon" href="https://cdn.wikimg.net/en/metroidwiki/images/thumb/9/9f/Samus_mpp_Artwork_2.png/250px-Samus_mpp_Artwork_2.png">
+    
+</head>
 
 <body>
     <!--Main Area-->
@@ -20,7 +23,7 @@
         <div class="container">
 
             <h2>Press Any Key To Guess This Word!</h2>
-            <!--Main Image which will not change -->
+            <!--Main Image changes on correct answer with Audio -->
             <section>
                 <div class=”media”>
                     <img id="image" src="./assets/images/2-WordGuess.jpg">
@@ -60,6 +63,39 @@
             </div>
         </div>
     </div>
+
+            <!--AUDIO FILES-->
+            <div>
+                <!--arthur-->
+                <audio id="pacman">
+                    <source src="./assets/audio/pacman.mp3" type="audio/mp3">
+                </audio>
+                <!--rugrats-->
+                <audio id="asteroids">
+                    <source src="./assets/audio/spaceinvaders.mp3" type="audio/mp3">
+                </audio>
+                <!--simpsons-->
+                <audio id="donkeykong">
+                    <source src="./assets/audio/donkeykong.mp3" type="audio/mp3">
+                </audio>
+                <!--scoobydoo-->
+                <audio id="pitfall">
+                    <source src="./assets/audio/castlevania.mp3" type="audio/mp3">
+                </audio>
+                <!--spongebob-->
+                <audio id="metroid">
+                    <source src="./assets/audio/metroid.mp3" type="audio/mp3">
+                </audio>
+                <!--danny-->
+                <audio id="supermario">
+                    <source src="./assets/audio/supermario.mp3" type="audio/mp3">
+                </audio>
+                <!--teentitans-->
+                <audio id="legendofzelda">
+                    <source src="./assets/audio/legendofzelda.mp3" type="audio/mp3">
+                </audio>
+            </div>
+    
 
     <script src="assets/javascript/game.js"></script>
     <!--A little bit of Java-->

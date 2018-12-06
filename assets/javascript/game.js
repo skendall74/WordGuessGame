@@ -1,5 +1,5 @@
 //VARIABLES
-var videoGames = ["pacman", "asteroids", "donkeykong", "pitfall", "metroid", "supermario", "legendofzelda"]
+var videoGames = ["pacman", "spaceinvaders", "donkeykong", "castlevania", "metroid", "supermario", "legendofzelda"]
 
 //Empty variables to store values later
 var randomGame = "";
@@ -12,9 +12,6 @@ var wrongGuess = [];
 var wins = 0;
 var losses = 0;
 var guessesleft = 9;
-var wins = 0;
-var losses = 0;
-
 // ALL FUNCTIONS
 //>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -47,6 +44,104 @@ function Game() {
     console.log(blanks);
     console.log(blanksAndCorrect);
 }
+ //_______________
+//AUDIO FUNCTION
+//________________
+ //variables for audio function
+ var p = document.getElementById("pacman");
+ var s = document.getElementById("spaceinvaders");
+ var donkeykong = document.getElementById("donkeykong");
+ var castlevania = document.getElementById("castlevania");
+ var metroid = document.getElementById("metroid");
+ var supermario = document.getElementById("supermario");
+ var legendofzelda = document.getElementById("legendofzelda");
+
+function aud() {
+    //Arthur Audio & Image
+    //---------------------------
+    if (randomGame === words[0]) {
+        castlevania.pause();
+        metroid.pause();
+        supermario.pause();
+        legendofzelda.pause();
+        donkeykong.pause();
+        s.pause();
+        p.play();
+        document.getElementById("image").src = "./assets/images/pacman.webp";
+    }
+    //Rugrats Audio & Image
+    //---------------------------
+    else if (randomGame === words[1]) {
+        castlevania.pause();
+        metroid.pause();
+        supermario.pause();
+        legendofzelda.pause();
+        donkeykong.pause();
+        p.pause();
+        s.play();
+        document.getElementById("image").src = "./assets/images/spaceinvaders.gif";
+    }
+    //Simpsons Audio & Image
+    //---------------------------
+    else if (randomGame === words[2]) {
+        castlevania.pause();
+        metroid.pause();
+        supermario.pause();
+        legendofzelda.pause();
+        p.pause();
+        s.pause();
+        donkeykong.play();
+        document.getElementById("image").src = "./assets/images/donkeykong.webp";
+    }
+    //Scooby-doo Audio & Image
+    //---------------------------
+    else if (randomGame === words[3]) {
+        p.pause();
+        metroid.pause();
+        supermario.pause();
+        legendofzelda.pause();
+        donkeykong.pause();
+        s.pause();
+        castlevania.play();
+        document.getElementById("image").src = "./assets/images/castlevania.gif";
+    }
+    //Metroid Audio & Image
+    //---------------------------
+    else if (randomGame === words[4]) {
+        castlevania.pause();
+        supermario.pause();
+        legendofzelda.pause();
+        donkeykong.pause();
+        s.pause();
+        p.pause();
+        metroid.play();
+        document.getElementById("image").src = "./assets/images/metroid.webp";
+    }
+    //Super Mario Audio & Image
+    //---------------------------
+    else if (randomGame === words[5]) {
+        castlevania.pause();
+        metroid.pause();
+        legendofzelda.pause();
+        donkeykong.pause();
+        s.pause();
+        p.pause();
+        supermario.play();
+        document.getElementById("image").src = "./assets/images/supermario.gif";
+    }
+    //Legend of Zelda Audio & Image
+    //---------------------------
+    else if (randomGame === words[6]) {
+        castlevania.pause();
+        metroid.pause();
+        supermario.pause();
+        donkeykong.pause();
+        s.pause();
+        p.pause();
+        legendofzelda.play();
+        document.getElementById("image").src = "./assets/images/legendofzelda.gif";
+    }
+};
 
 //________________
 //RESET FUNCTION
@@ -58,6 +153,8 @@ function reset() {
     blanksAndCorrect = [];
     Game()
 }
+
+
 
 //_______________________________
 //CHECK LETTERS/COMPARE FUNCTION
@@ -101,9 +198,9 @@ function complete() {
     if (gameWord.toString() == blanksAndCorrect.toString()) {
         wins++;
         reset()
+        aud()
         //display wins on screen
         document.getElementById("winstracker").innerHTML = " " + wins;
-
         //if LOST...then alert and reset new round
     } else if (guessesleft === 0) {
         losses++;
@@ -135,7 +232,6 @@ document.onkeyup = function (event) {
     complete();
     //store player guess in console for reference 
     console.log(guesses);
-
     //display/store incorrect letters on screen
     document.getElementById("playerwrong").innerHTML = "  " + wrongGuess.join(" ");
 }

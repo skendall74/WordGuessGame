@@ -5,7 +5,7 @@
 /* HTML, BODY CSS, JS*/
 
 body {
-    background: url('./assets/images/wallpaper.jpeg') repeat;
+    background: url('../images/wallpaper.jpg') repeat center;
 }
 
 /* Header*/
@@ -13,7 +13,7 @@ body {
 h1 {
     font-size: 43px;
     border: solid 7px #0021A5;
-    background: white;
+    background: #fff;
     text-align: center;
     margin-top: 2%;
     margin-left: 10%;
@@ -49,11 +49,14 @@ h2 {
     padding: 10px 0px 10px 10px;
 }
 
+h3 {
+    padding-top: 10px;
+}
+
 .side {
     padding: 5px;
     position: relative;
-    border-top: solid #0021A5 2px;
-    border-bottom: solid #0021A5 2px;
+    border-top: dashed #0021A5 2px;
     margin-bottom: 10px;
     font-family: 'Press Start 2P', cursive;
     font-size: 12px;
@@ -75,7 +78,7 @@ span {
 }
 
 .container {
-    background-color: white;
+    background-color: #fff;
     margin-top: 5px;
     margin-left: 20%;
     margin-right: 20%;
