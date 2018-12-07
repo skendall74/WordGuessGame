@@ -48,29 +48,39 @@ function Game() {
 //AUDIO FUNCTION
 //________________
  //variables for audio function
- var p = document.getElementById("pacman");
- var s = document.getElementById("spaceinvaders");
+
+ var pacman = { name: "pacman" }; 
+ var spaceinvaders = { name: "spaceinvaders" }; 
+ var donkeykong = { name: "donkeykong" }; 
+ var castlevania = { name: "castlevania" }; 
+ var metroid = { name: "metroid" }; 
+ var supermario = { name: "supermario" }; 
+ var legendofzelda = { name: "legendofzelda" }; 
+
+ var pacman = document.getElementById("pacman")
+ var spaceinvaders = document.getElementById("spaceinvaders");
  var donkeykong = document.getElementById("donkeykong");
  var castlevania = document.getElementById("castlevania");
  var metroid = document.getElementById("metroid");
  var supermario = document.getElementById("supermario");
  var legendofzelda = document.getElementById("legendofzelda");
 
+
+
 function aud() {
-    //Arthur Audio & Image
+    //Pacman Audio & Image
     //---------------------------
     if (randomGame === videoGames[0]) {
-        console.log("This Works")
         castlevania.pause();
         metroid.pause();
         supermario.pause();
         legendofzelda.pause();
         donkeykong.pause();
-        s.pause();
-        p.play();
+        spaceinvaders.pause();
+        pacman.play();
         document.getElementById("image").src = "./assets/images/pacman.webp";
     }
-    //Rugrats Audio & Image
+    //Space Invaders Audio & Image
     //---------------------------
     else if (randomGame === videoGames[1]) {
         castlevania.pause();
@@ -78,8 +88,8 @@ function aud() {
         supermario.pause();
         legendofzelda.pause();
         donkeykong.pause();
-        p.pause();
-        s.play();
+        pacman.pause();
+        spaceinvaders.play();
         document.getElementById("image").src = "./assets/images/spaceinvaders.gif";
     }
     //Simpsons Audio & Image
@@ -89,22 +99,22 @@ function aud() {
         metroid.pause();
         supermario.pause();
         legendofzelda.pause();
-        p.pause();
-        s.pause();
+        pacman.pause();
+        spaceinvaders.pause();
         donkeykong.play();
         document.getElementById("image").src = "./assets/images/donkeykong.webp";
     }
     //Scooby-doo Audio & Image
     //---------------------------
     else if (randomGame === videoGames[3]) {
-        p.pause();
+        spaceinvaders.pause();
         metroid.pause();
         supermario.pause();
         legendofzelda.pause();
         donkeykong.pause();
-        s.pause();
+        pacman.pause();
         castlevania.play();
-        document.getElementById("image").src = "./assets/images/castlevania.gif";
+        document.getElementById("image").src = "./assets/images/castlevania.webp";
     }
     //Metroid Audio & Image
     //---------------------------
@@ -113,8 +123,8 @@ function aud() {
         supermario.pause();
         legendofzelda.pause();
         donkeykong.pause();
-        s.pause();
-        p.pause();
+        spaceinvaders.pause();
+        pacman.pause();
         metroid.play();
         document.getElementById("image").src = "./assets/images/metroid.webp";
     }
@@ -125,8 +135,8 @@ function aud() {
         metroid.pause();
         legendofzelda.pause();
         donkeykong.pause();
-        s.pause();
-        p.pause();
+        spaceinvaders.pause();
+        pacman.pause();
         supermario.play();
         document.getElementById("image").src = "./assets/images/supermario.gif";
     }
@@ -138,7 +148,7 @@ function aud() {
         supermario.pause();
         donkeykong.pause();
         s.pause();
-        p.pause();
+        pacman.pause();
         legendofzelda.play();
         document.getElementById("image").src = "./assets/images/legendofzelda.gif";
     }
@@ -161,7 +171,7 @@ function reset() {
 //CHECK LETTERS/COMPARE FUNCTION
 //_______________________________
 
-//If/Else, to see if letter selected matches random game
+//If/Else, to see if letter selected matches random video game
 function checkLetters(letter) {
     var letterInGame = false;
     //if the generated randomGame is equal to the letter entered... then variable is true
@@ -195,21 +205,21 @@ function checkLetters(letter) {
 function complete() {
     console.log("wins:" + wins + "| losses:" + losses + "| guesses left:" + guessesleft)
 
-    //if WON...then alert, play audio, display image and reset new round
+    //if won...then alert, play audio, display gif and reset new round
     if (gameWord.toString() == blanksAndCorrect.toString()) {
         wins++;
-        reset()
         aud()
+        reset()
         //display wins on screen
         document.getElementById("winstracker").innerHTML = " " + wins;
-        //if LOST...then alert and reset new round
+        //if lost...then alert and reset new round
     } else if (guessesleft === 0) {
         losses++;
         reset()
         document.getElementById("image").src = "./assets/images/2-WordGuess.jpg"
         document.getElementById("losstracker").innerHTML = " " + losses;
     }
-    //display losses on screen && guesses left countdown
+    //display losses on screen & guesses left countdown
     document.getElementById("answer").innerHTML = "  " + blanksAndCorrect.join(" ");
     document.getElementById("guessesleft").innerHTML = " " + guessesleft;
 }
@@ -224,7 +234,7 @@ function complete() {
 
 Game()
 
-//check for keyup, and convert to lowercase then store in guesses
+//Keyup, convert to lowercase then store in guesses
 document.onkeyup = function (event) {
     var guesses = String.fromCharCode(event.keyCode).toLowerCase();
     //check to see if guess entered matches value of random word
