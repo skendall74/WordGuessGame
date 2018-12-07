@@ -92,7 +92,7 @@ function aud() {
         spaceinvaders.play();
         document.getElementById("image").src = "./assets/images/spaceinvaders.gif";
     }
-    //Simpsons Audio & Image
+    //Donkey Kong Audio & Image
     //---------------------------
     else if (randomGame === videoGames[2]) {
         castlevania.pause();
@@ -104,7 +104,7 @@ function aud() {
         donkeykong.play();
         document.getElementById("image").src = "./assets/images/donkeykong.webp";
     }
-    //Scooby-doo Audio & Image
+    //Castlevania Audio & Image
     //---------------------------
     else if (randomGame === videoGames[3]) {
         spaceinvaders.pause();
@@ -147,7 +147,7 @@ function aud() {
         metroid.pause();
         supermario.pause();
         donkeykong.pause();
-        s.pause();
+        spaceinvaders.pause();
         pacman.pause();
         legendofzelda.play();
         document.getElementById("image").src = "./assets/images/legendofzelda.gif";
