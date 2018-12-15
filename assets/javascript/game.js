@@ -11,7 +11,7 @@ var wrongGuess = [];
 //Counter Variables
 var wins = 0;
 var losses = 0;
-var guessesleft = 9;
+var guessesleft = 5;
 // ALL FUNCTIONS
 //>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -159,7 +159,7 @@ function aud() {
 //________________
 
 function reset() {
-    guessesleft = 9;
+    guessesleft = 5;
     wrongGuess = [];
     blanksAndCorrect = [];
     Game()
